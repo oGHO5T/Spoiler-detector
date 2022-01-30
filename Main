@@ -1,0 +1,20 @@
+import java.util.*;
+public class Spoiler
+{
+    public static void main()
+    {
+        Scanner ob=new Scanner(System.in); 
+        String keywords[] = {"no way home", "spiderman","doctor Strange", "marvel", "peter parker", "new movie"}; //We can add more keywords to this list
+        System.out.println("Enter your post");
+        String post=ob.nextLine();
+        boolean result=false;
+        if(Arrays.stream(keywords).anyMatch(post.toLowerCase()::contains)) //to compare the post against the strings in the array
+        {
+            result=true;
+        }
+        if(result=true)
+        System.out.println("This post consists of a spoiler and will be blurred");
+        else
+        System.out.println("This post is spoiler free");
+    }
+}
